@@ -42,17 +42,18 @@ export default function LoginForm() {
   };
 
   return (
+    <div>
     <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-lg">
       <h1 className="text-3xl font-bold mb-2">Welcome to</h1>
       <h2 className="text-4xl font-bold text-indigo-600 mb-8">Unstop</h2>
 
       <div className="space-y-4 mb-8">
         <button className="w-full flex items-center justify-center gap-2 py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="w-5 h-5" />
+          <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
           Login with Google
         </button>
         <button className="w-full flex items-center justify-center gap-2 py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" className="w-5 h-5" />
+          <img src="https://www.facebook.com/favicon.ico" alt="Facebook" className="w-5 h-5" />
           Login with Facebook
         </button>
       </div>
@@ -134,6 +135,15 @@ export default function LoginForm() {
           </a>
         </p>
       </form>
+     
+      
+    </div>
+    <div className="mt-6 p-4 bg-gray-100 border border-gray-300 text-sm text-gray-700 w-full max-w-md p-8  rounded-2xl shadow-lg">
+        <p><strong>Default Credentials:</strong></p>
+        <p><strong>Username:</strong> emilys</p>
+        <p><strong>Email:</strong> emilys@example.com</p>
+        <p><strong>Password:</strong> password123</p>
+      </div>
     </div>
   );
 }
