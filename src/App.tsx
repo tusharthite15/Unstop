@@ -4,21 +4,19 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 
-function PrivateRoute({ children }: { children: React.ReactNode }) {
-  const { user } = useAuth();
-  return user ? <>{children}</> : <Navigate to="/auth/login" />;
-}
-
-function PublicRoute({ children }: { children: React.ReactNode }) {
-  const { user } = useAuth();
-  return !user ? <>{children}</> : <Navigate to="/home" />;
-}
-
 function AppRoutes() {
+  const { user } = useAuth();
+
   return (
     <Routes>
-      <Route path="/auth/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
-      <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
+      <Route
+        path="/auth/login"
+        element={user ? <Navigate to="/home" /> : <LoginPage />}
+      />
+      <Route
+        path="/home"
+        element={user ? <HomePage /> : <Navigate to="/auth/login" />}
+      />
       <Route path="/" element={<Navigate to="/auth/login" />} />
     </Routes>
   );
